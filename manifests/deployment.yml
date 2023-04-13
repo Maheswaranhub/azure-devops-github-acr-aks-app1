@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: nginxaksapp 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: nginxaksapp
+  template:
+    metadata:
+      labels:
+        app: nginxaksapp 
+    spec:
+      containers:
+        - name: nginxaksapp 
+          image: myacraks13.azurecr.io/nginxaksapp
+          ports:
+          - containerPort: 80
